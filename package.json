@@ -1,6 +1,6 @@
 {
 	"name": "camera-control",
-	"productName": "Camera Control",
+	"productName": "camera-control",
 	"description": "Camera Control App for PTZOptics Network IP Cameras",
 	"author": "Jonathan Brimer",
 	"version": "0.1.7",
@@ -29,7 +29,7 @@
 
 	"build": {
 		"appId": "propernerd.camera.control",
-		"productName": "Camera Control",
+		"productName": "camera-control",
 		"dmg": {
 			"contents": [{
 					"x": 130,

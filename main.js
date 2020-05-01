@@ -28,8 +28,8 @@ function createWindow () {
 		y: lastWindowState.y,
 		width: lastWindowState.width,
 		height: lastWindowState.height,
-		frame: false,
-		resizable: false
+		frame: true,
+		resizable: true
 	});
 
 	// and load the index.html of the app.
