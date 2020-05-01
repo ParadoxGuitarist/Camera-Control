@@ -6,6 +6,15 @@ var base_url = "http://" + camera_ip + "/cgi-bin";
 var defaults = {
     ip: camera_ip,
     name: camera_name,
+    sn1: "1",
+    sn2: "2",
+    sn3: "3",
+    sn4: "4",
+    sn5: "5",
+    sn6: "6",
+    sn7: "7",
+    sn8: "8",
+    sn9: "9",
     flip: 1,
     mirror: 1,
     invertcontrols: 1,
@@ -63,8 +72,17 @@ function config_init () {
 	$("#cam_ip").val(config.ip);
 	base_url = "http://" + config.ip + "/cgi-bin";
 
-  // set the inital name for the camera.
+  // set the inital name for the camera and scenes
   $("#cam_name").val(config.name)
+  $("#scene_name_1").val(config.sn1)
+  $("#scene_name_2").val(config.sn2)
+  $("#scene_name_3").val(config.sn3)
+  $("#scene_name_4").val(config.sn4)
+  $("#scene_name_5").val(config.sn5)
+  $("#scene_name_6").val(config.sn6)
+  $("#scene_name_7").val(config.sn7)
+  $("#scene_name_8").val(config.sn8)
+  $("#scene_name_9").val(config.sn9)
 
 	// set the camera's initial configuration for each value in the saved config object
 	config_setting("flip", config.flip);
@@ -193,9 +211,26 @@ function reload_cam () {
 
 function reload_name () {
   config.name = $('#cam_name').val();
-  config.name = config.name;
+  config.sn1 = $('#scene_name_1').val();
+  config.sn2 = $('#scene_name_2').val();
+  config.sn3 = $('#scene_name_3').val();
+  config.sn4 = $('#scene_name_4').val();
+  config.sn5 = $('#scene_name_5').val();
+  config.sn6 = $('#scene_name_6').val();
+  config.sn7 = $('#scene_name_7').val();
+  config.sn8 = $('#scene_name_8').val();
+  config.sn9 = $('#scene_name_9').val();
   save_config();
   document.getElementById("camName").innerHTML = setCamName();
+  document.getElementById("ps1").innerHTML = "<a class=\"call_preset preset_button preset-1\" data-preset=\"1\" href=\"#preset-1\">" + config.sn1 + "</a>";
+  document.getElementById("ps2").innerHTML = "<a class=\"call_preset preset_button preset-2\" data-preset=\"2\" href=\"#preset-2\">" + config.sn2 + "</a>";
+  document.getElementById("ps3").innerHTML = "<a class=\"call_preset preset_button preset-3\" data-preset=\"3\" href=\"#preset-3\">" + config.sn3 + "</a>";
+  document.getElementById("ps4").innerHTML = "<a class=\"call_preset preset_button preset-4\" data-preset=\"4\" href=\"#preset-4\">" + config.sn4 + "</a>";
+  document.getElementById("ps5").innerHTML = "<a class=\"call_preset preset_button preset-5\" data-preset=\"5\" href=\"#preset-5\">" + config.sn5 + "</a>";
+  document.getElementById("ps6").innerHTML = "<a class=\"call_preset preset_button preset-6\" data-preset=\"6\" href=\"#preset-6\">" + config.sn6 + "</a>";
+  document.getElementById("ps7").innerHTML = "<a class=\"call_preset preset_button preset-7\" data-preset=\"7\" href=\"#preset-7\">" + config.sn7 + "</a>";
+  document.getElementById("ps8").innerHTML = "<a class=\"call_preset preset_button preset-8\" data-preset=\"8\" href=\"#preset-8\">" + config.sn8 + "</a>";
+  document.getElementById("ps9").innerHTML = "<a class=\"call_preset preset_button preset-9\" data-preset=\"9\" href=\"#preset-9\">" + config.sn9 + "</a>";
   alert("Name Saved.");
 }
 
@@ -574,6 +609,15 @@ function setCamName() {
 }
 
 document.getElementById("camName").innerHTML = setCamName();
+document.getElementById("ps1").innerHTML = "<a class=\"call_preset preset_button preset-1\" data-preset=\"1\" href=\"#preset-1\">" + config.sn1 + "</a>";
+document.getElementById("ps2").innerHTML = "<a class=\"call_preset preset_button preset-2\" data-preset=\"2\" href=\"#preset-2\">" + config.sn2 + "</a>";
+document.getElementById("ps3").innerHTML = "<a class=\"call_preset preset_button preset-3\" data-preset=\"3\" href=\"#preset-3\">" + config.sn3 + "</a>";
+document.getElementById("ps4").innerHTML = "<a class=\"call_preset preset_button preset-4\" data-preset=\"4\" href=\"#preset-4\">" + config.sn4 + "</a>";
+document.getElementById("ps5").innerHTML = "<a class=\"call_preset preset_button preset-5\" data-preset=\"5\" href=\"#preset-5\">" + config.sn5 + "</a>";
+document.getElementById("ps6").innerHTML = "<a class=\"call_preset preset_button preset-6\" data-preset=\"6\" href=\"#preset-6\">" + config.sn6 + "</a>";
+document.getElementById("ps7").innerHTML = "<a class=\"call_preset preset_button preset-7\" data-preset=\"7\" href=\"#preset-7\">" + config.sn7 + "</a>";
+document.getElementById("ps8").innerHTML = "<a class=\"call_preset preset_button preset-8\" data-preset=\"8\" href=\"#preset-8\">" + config.sn8 + "</a>";
+document.getElementById("ps9").innerHTML = "<a class=\"call_preset preset_button preset-9\" data-preset=\"9\" href=\"#preset-9\">" + config.sn9 + "</a>";
 
 $('body').on('click', '.autopan', function(e) {
 	e.preventDefault();

@@ -31,24 +31,22 @@
 				<form role="form" class="form-horizontal">
 
 					<fieldset class="presets">
-						<div class="row">
-							<a class="call_preset preset_button preset-1" data-preset="1" href="#preset-1">1</a>
-							<a class="call_preset preset_button preset-2" data-preset="2" href="#preset-2">2</a>
-							<a class="call_preset preset_button preset-3" data-preset="3" href="#preset-3">3</a>
+						<div class="row-fluid">
+							<p id="ps1"></p>
+							<p id="ps2"></p>
+							<p id="ps3"></p>
 						</div>
-						<div class="row">
-							<a class="call_preset preset_button preset-4" data-preset="4" href="#preset-4">4</a>
-							<a class="call_preset preset_button preset-5" data-preset="5" href="#preset-5">5</a>
-							<a class="call_preset preset_button preset-6" data-preset="6" href="#preset-6">6</a>
+						<div class="row-fluid">
+							<p id="ps4"></p>
+							<p id="ps5"></p>
+							<p id="ps6"></p>
 						</div>
-						<div class="row">
-							<a class="call_preset preset_button preset-7" data-preset="7" href="#preset-7">7</a>
-							<a class="call_preset preset_button preset-8" data-preset="8" href="#preset-8">8</a>
-							<a class="call_preset preset_button preset-9" data-preset="9" href="#preset-9">9</a>
+						<div class="row-fluid">
+							<p id="ps7"></p>
+							<p id="ps8"></p>
+							<p id="ps9"></p>
 						</div>
-						<div class="row">
-							<a href="#" class="autopan"></a>
-						</div>
+
 					</fieldset>
 
 					<fieldset class="controls">
@@ -331,13 +329,58 @@
 					</div>
 
 					<div class="row">
+						<div class="col-xs-4">
+							<label for="scene_name_1">Scene Name 1</label>
+							<input class="form-control" type="text" id="scene_name_1" value="">
+						</div>
+						<div class="col-xs-4">
+							<label for="scene_name_2">Scene Name 2</label>
+							<input class="form-control" type="text" id="scene_name_2" value="">
+						</div>
+						<div class="col-xs-4">
+							<label for="scene_name_3">Scene Name 3</label>
+							<input class="form-control" type="text" id="scene_name_3" value="">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-4">
+							<label for="scene_name_4">Scene Name 4</label>
+							<input class="form-control" type="text" id="scene_name_4" value="">
+						</div>
+						<div class="col-xs-4">
+							<label for="scene_name_5">Scene Name 5</label>
+							<input class="form-control" type="text" id="scene_name_5" value="">
+						</div>
+						<div class="col-xs-4">
+							<label for="scene_name_6">Scene Name 6</label>
+							<input class="form-control" type="text" id="scene_name_6" value="">
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-4">
+							<label for="scene_name_7">Scene Name 7</label>
+							<input class="form-control" type="text" id="scene_name_7" value="">
+						</div>
+						<div class="col-xs-4">
+							<label for="scene_name_8">Scene Name 8</label>
+							<input class="form-control" type="text" id="scene_name_8" value="">
+						</div>
+						<div class="col-xs-4">
+							<label for="scene_name_9">Scene Name 9</label>
+							<input class="form-control" type="text" id="scene_name_9" value="">
+						</div>
+					</div>
+
+					<div class="row">
 						<div class="col-xs-6">
 							<label for="cam_name">Camera Name</label>
 							<input class="form-control" type="text" id="cam_name" value="">
 						</div>
 						<div class="col-xs-6">
 							<label>&nbsp;</label>
-							<button class="btn btn-primary form-control reload_name">Change Name</button>
+							<button class="btn btn-primary form-control reload_name">Set Names</button>
 						</div>
 					</div>
 
