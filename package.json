@@ -3,35 +3,32 @@
 	"productName": "camera-control",
 	"description": "Camera Control App for PTZOptics Network IP Cameras",
 	"author": "Jonathan Brimer",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"main": "main.js",
-
+	"license": "LICENSE.text",
 	"scripts": {
 		"start": "electron .",
-
+		"build": "electron-packager . camera-control --platform linux --arch x64 --out dist/",
 		"clean": "rm -rf ./dist",
 		"clean:osx": "rm -rf ./dist/osx",
 		"clean:win": "rm -rf ./dist/win",
-
 		"pack": "npm run clean && npm run pack:osx && npm run pack:win32 && npm run pack:win64",
 		"pack:osx": "npm run clean:osx && electron-packager . \"Camera Control\" --out=dist/osx --platform=darwin --arch=x64 --electron-version=1.6.8 --icon=assets/osx/icon.icns",
 		"pack:win32": "npm run clean:win && electron-packager . \"Camera Control\" --out=dist/win --platform=win32 --arch=ia32 --electron-version=1.6.8 --icon=assets/win/icon.ico",
 		"pack:win64": "npm run clean:win && electron-packager . --overwrite --asar=true --prune=true --out=dist/win --platform=win32 --arch=x64 --electron-version=1.6.8 --icon=assets/win/icon.ico --version-string.CompanyName=\"Jonathan Brimer\" --version-string.FileDescription=\"Jonathan Brimer\" --version-string.ProductName=\"Camera Control\"",
-
 		"dist": "build -ow --x64 && build -w --ia32",
-
 		"prerelease:win32": "rm -rf release/win32 && mkdirp release/win32",
 		"prerelease:win64": "rm -rf release/win64 && mkdirp release/win64",
-
 		"release:win32": "cp -v dist/win-ia32/{RELEASES,*.nupkg,*.exe} release/win32",
-		"release:win64": "cp -v dist/win/{RELEASES,*.nupkg,*.exe} release/win64"
+		"release:win64": "cp -v dist/win/{RELEASES,*.nupkg,*.exe} release/win64",
+		"rpm64": "electron-installer-redhat --src dist/camera-control-linux-x64/ --arch x86_64 --config rpmconfig.json --verbose"
 	},
-
 	"build": {
 		"appId": "propernerd.camera.control",
 		"productName": "camera-control",
 		"dmg": {
-			"contents": [{
+			"contents": [
+				{
 					"x": 130,
 					"y": 220
 				},
@@ -40,17 +37,22 @@
 					"y": 220,
 					"type": "link",
 					"path": "/Applications"
-			}],
+				}
+			],
 			"icon": "build/icon.icns"
 		},
 		"win": {
 			"icon": "build/icon.ico"
+		},
+		"linux": {
+			"icon": "build/icon.png"
 		}
 	},
-
 	"devDependencies": {
 		"electron": "^1.6.8",
 		"electron-builder": "^18.0.1",
-		"electron-packager": "^8.7.0"
+		"electron-installer-redhat": "^3.0.0",
+		"electron-packager": "^8.7.0",
+		"electron-prebuilt": "*"
 	}
 }

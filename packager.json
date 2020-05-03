@@ -10,5 +10,9 @@
 	"win64" : {
 		"title" : "Camera Control",
 		"icon" : "assets/win/icon.ico"
+	},
+	"linux" :{
+		"title": "Camera Control",
+		"icon" : "assets/linux/icon.png"
 	}
 }

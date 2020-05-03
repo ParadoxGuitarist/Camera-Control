@@ -29,8 +29,10 @@ function createWindow () {
 		width: lastWindowState.width,
 		height: lastWindowState.height,
 		frame: true,
-		resizable: true
-	});
+		resizable: true,
+		icon: __dirname + '/build/128x128.png'
+	})
+	mainWindow.setMenu(null);
 
 	// and load the index.html of the app.
 	// mainWindow.loadURL('file://' + __dirname + '/index.html');
